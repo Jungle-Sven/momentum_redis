@@ -1,4 +1,4 @@
-
+A redis local in-memory storage for trade data. Create a docker network and run redis server. 
 
 0! create network 
 
@@ -10,7 +10,7 @@ sudo docker build -t momentum_redis .
 
 2 run
 
-sudo docker run -d --restart always --name momentum_redis_container --network momentum_network --log-opt mode=non-blocking --log-opt max-buffer-size=10m redis:latest
+sudo docker run -d --restart always --name momentum_redis_container --network momentum_network --log-opt mode=non-blocking --log-opt max-size=10m --log-opt max-file=3 redis:latest
 
 3 stop
 
